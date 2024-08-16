@@ -20,6 +20,18 @@
   left:0;
 }
 
+.box{
+  width:80%;
+  height:80%;
+  display:grid;
+  place-items:center;
+  border:1px solid white;
+}
+
+#imagebox{
+  background-image:url(./assets/emils\ flote\ flote\ julemand.png);
+  background-size: cover;
+}
 #page1{
   background-color: lightskyblue;
 }

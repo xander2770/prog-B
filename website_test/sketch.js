@@ -4,6 +4,7 @@ let currentpage = 1
 let pages // en arry med alle sider
 
 function setup(){
+  select("#page" + currentpage).addClass("visible")
   pages = selectAll('.page')
   //console.log(pages.length)
 
