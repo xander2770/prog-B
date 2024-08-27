@@ -5,20 +5,22 @@
 }
 
 header{
-  width:100vw;
-  height:12vh;
+  width:10vw;
+  height:30vh;
   position:fixed;
   z-index:2;
   background-color: rebeccapurple;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: auto;
+  grid-template-rows:repeat(4, 1fr);
 }
 
-header#leftmenu{
-  width:20vw;
-  height:100vh;
-  grid-template-columns: auto;
-  grid-template-rows:4, 1fr;
+header#menu{
+  margin-left: 90vw;
+  border-radius: 1vw;
+}
+header#hidden{
+  margin-left: 100vW;
 }
 
 .menuitem{
@@ -44,10 +46,8 @@ header#leftmenu{
 .page{
   position:fixed;
   left:-100vw;
-  width:80vw;
+  width:100vw;
   height:100vh;
-  margin-left:20vw;
-  top:0vh;
   overflow:hidden;
   display:grid;
   place-items:center;
