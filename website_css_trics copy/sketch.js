@@ -1,13 +1,22 @@
 
 let currentpage = 1
-
+let menuitems //arry med alle menuer
 let pages // en arry med alle sider
 
 function setup(){
-  select("#page" + currentpage).addClass("visible")
+
   pages = selectAll('.page')
+  menuitems = selectAll('.menuitem')
   //console.log(pages.length)
 
+  for( m of menuitems){
+    m.mousePressed( function(e){
+      let nr = e.target.id.slice(-1)
+      shiftpage(nr)
+    })
+  }
+
+  shiftpage(currentpage)
 }
 function shiftpage(num){
   if(num == "ArrowLeft"){
@@ -17,12 +26,13 @@ function shiftpage(num){
     num = currentpage+1
   }
   if(isNaN(num) || num > pages.length || num == 0){
-  alert("er du lidt dum, du kan kun klikke tal som har en side")
     return
   }
   select("#page" + currentpage).removeClass("visible")
+  select("#menu" + currentpage).removeClass("active")
   currentpage = num
   select("#page" + currentpage).addClass("visible")
+  select("#menu" + currentpage).addClass("active")
 }
 
 function keyPressed(){
