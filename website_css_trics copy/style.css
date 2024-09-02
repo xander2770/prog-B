@@ -89,22 +89,37 @@ header.hidden{
 
 #page1{
   background-color: lightskyblue;
+  background-image: url('./assets/scale.webp');
+  background-size: auto;
+  background-repeat: no-repeat; 
+  background-position: center; 
+
 }
 #page2{
-background-color: lightgoldenrodyellow;
-}
-#page3 div{
-  width:100%;
-  height:100%;
+  background-color: black;
+  background-image: url('./assets/cast.png');
+  background-size: contain;
+  background-repeat: no-repeat; 
+  background-position: center; 
 }
 #page3{
-background-color: lightgreen;
+  background-color: lightslategrey;
+background-image: url('./assets/cast-of-modern-family-first-vs-last-season.jpg');
+background-size: contain;
+background-repeat: no-repeat; 
+background-position: center; 
+}
+#storylineText{
+  background-color:whitesmoke;
+  width: 80vw;
+  height: 60vh;
+  border-radius: 1vw;
 }
 #page4{
 background-color: lightseagreen;
 }
 
 h1{
-  color:hotpink;
+  color:black;
   font-family:raleway;
 }
