@@ -39,13 +39,6 @@ function setup() {
 
   shiftpage(currentpage);
 }
-
-function draw(){
-  let menu4 = select('header #menu4')
-  if (menu4.classList.contains('active')) {
-    select('header').style('border-bottom', '6px solid red')
-  }
-}
 function shiftpage(num) {
   if (num == "ArrowLeft") {
     num = currentpage - 1;
