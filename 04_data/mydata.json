@@ -1,0 +1,8 @@
+{
+    "name" : "Alexander",
+    "description":"dette er fra min lokal json fil",
+    "age":"18",
+    "hairColor":"leverpostej",
+    "ven":"Emil",
+    "image":"./assets/matt-hardy-6ArTTluciuA-unsplash.jpg"
+}

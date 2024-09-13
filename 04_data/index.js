@@ -1,4 +1,4 @@
-let currentPage = 1
+let currentPage = 2
 
 let pages //array med alle elementer med class = page 
 let menuItems //array med alle menupunkterne  
@@ -31,31 +31,60 @@ function setupMenuStructure(){
     }, 10000)
 
 }
+function pageOne(){
+    console.log('side 1 bliver kalt')
+}
 
 function pageTwo(){
+     //Først kalder vi mydata.json filen
+     fetch('mydata.json')
 
-    //Først kalder vi server API'ets endpoint
-    fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+     //så venter vi på kaldets promise, der kommer tilbage med .then()
+     .then(
+         function(response){
+             //lad os tjekke om serverens response er okay
+             console.log(response)
+             //og hvis det er det, beder vi serveren om at give os json resultatet 
+             return response.json()
+         }
+     )
+     //og når DET så komer tilbage 
+     .then(
+         function (data){
+             //vi har nu en random drink
+             console.log(data)
+            
+             let newDiv = createElement('div')
+             let newHeader = createElement('h1',data.name)
+             let newp = createElement('p',data.description)
+             newDiv.child(newHeader)
+             newDiv.child(newp)
+             select('#localData').child(newDiv)
+         }
+     )
 
-    //så venter vi på serverens promise, der kommer tilbage med .then()
-    .then(
-        function(response){
-            //lad os tjekke om serverens response er okay
-            console.log(response)
-            //og hvis det er det, beder vi serveren om at give os json resultatet 
-            return response.json()
-        }
-    )
-    //og når DET så komer tilbage 
-    .then(
-        function (data){
-            //vi har nu en random drink
-            console.log(data)
-        }
-    )
 }
 
 function pageThree(){
+ //Først kalder vi server API'ets endpoint
+ fetch('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+
+ //så venter vi på serverens promise, der kommer tilbage med .then()
+ .then(
+     function(response){
+         //lad os tjekke om serverens response er okay
+         console.log(response)
+         //og hvis det er det, beder vi serveren om at give os json resultatet 
+         return response.json()
+     }
+ )
+ //og når DET så komer tilbage 
+ .then(
+     function (data){
+         //vi har nu en random drink
+         console.log(data)
+     }
+ )
 }
 
 function pageFour(){
@@ -78,12 +107,18 @@ function shiftPage(num){
     currentPage = num
     select("#page" + currentPage).addClass('visible')
     select("#menu" + currentPage).addClass('active')
-
+    
+    if(currentPage == 1) {
+        pageOne()
+    }
     if(currentPage == 2) {
         pageTwo()
     }
     if(currentPage == 3) {
         pageThree()
+    }
+    if(currentPage == 4) {
+        pageFour()
     }
 }
 
