@@ -57,8 +57,17 @@ function pageTwo(){
              let newDiv = createElement('div')
              let newHeader = createElement('h1',data.name)
              let newp = createElement('p',data.description)
+             let hairHeadder = createElement('h4', 'tidliger hår faver')
+             let hairList = createElement('ul')
+             for(color of data.hairColor){
+                let listItem = createElement('li', color)
+                hairList.child(listItem)
+             }
              newDiv.child(newHeader)
              newDiv.child(newp)
+             newDiv.child(hairHeadder)
+             newDiv.child(hairList)
+             select('#localData').html('')
              select('#localData').child(newDiv)
          }
      )
