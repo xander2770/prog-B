@@ -88,12 +88,25 @@ function pageThree(){
      }
  )
  //og når DET så komer tilbage 
- .then(
-     function (data){
+    .then(
+        function (data){
          //vi har nu en random drink
-         console.log(data)
-     }
- )
+            console.log(data)
+            let newDiv = createElement('div')
+            let newHeader = createElement('h1',data.drinks[0].strDrink)
+            let newImage = createImg(data.drinks[0].strDrinkThumb, 'this is a image of a coktail')
+            newImage.size(300, 300)
+
+            
+            newDiv.child(newHeader)
+            newDiv.child(newImage)
+            
+
+            select('#onlineData').html('')
+            select('#onlineData').child(newDiv)
+
+        }
+    )
 }
 
 function pageFour(){
