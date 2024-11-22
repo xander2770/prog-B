@@ -15,21 +15,18 @@
     place-items:center;
     transition: 0.3s 0.3s all ease-in-out;
 }
-#clock{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
-}
+
 
 .time{
-    font-size: 6rem;
-    height: 11rem;
-    width: 11rem;
-    border: 1px dotted hotpink;
-    border-radius: 50%;
-    display: grid;
-    place-items: CENTER;
-} 
+    font-family:arial;
+    font-size:6rem;
+    height:11rem;
+    width:11rem;
+    border:1px dotted hotpink;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+}
 
 .visible{
     left:0;
